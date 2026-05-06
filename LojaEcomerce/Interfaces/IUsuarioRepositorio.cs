@@ -8,5 +8,11 @@ namespace LojaEcomerce.Interfaces
         //A INTERFACE NÃO CONTÉM CONTEM CÓDIGO APENAS A PROMESSA DO QUE DEVE
         // SER FEITO ( COMO UM CONTRATO)
         LoginViewModel Validar(string email, string senha);
+
+        //Contrato para salvar um novo usuario no banco
+        void CriarConta(LoginViewModel usuario);
     }
+ 
+
+
 }
