@@ -1,0 +1,50 @@
+﻿@model LojaEcomerce.Models.LoginViewModel
+
+<div>
+
+    <div>
+
+        <div>
+            <h3>Criar Conta</h3>
+        </div>
+
+        <form asp-action="CriarConta" method="post">
+            @Html.AntiForgeryToken()
+            <div>
+                <label asp-for="Nome">Nome</label>
+                <input asp-for="Nome" type="text" placeholder="Digite seu nome" required />
+                <span asp-validation-for="Nome"></span>
+            </div>
+            <div>
+                <label asp-for="Email">E-mail</label>
+                <input asp-for="Email" type="email" placeholder="seu@email.com" required />
+                <span asp-validation-for="Email"></span>
+            </div>
+
+            <div>
+                <label asp-for="Senha">Senha</label>
+                <input asp-for="Senha" type="password" placeholder="Crie uma senha forte" required />
+                <span asp-validation-for="Senha"></span>
+            </div>
+
+            <div>
+                <button type="submit">Cadastrar</button>
+            </div>
+
+            <hr>
+
+            <div>
+                <p>Já Possui Login?</p>
+                <a asp-action="Login">
+                    Fazer Login
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

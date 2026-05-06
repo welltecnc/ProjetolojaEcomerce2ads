@@ -1,0 +1,46 @@
+﻿@model LojaEcomerce.Models.LoginViewModel
+
+@{
+	ViewData["Title"] = "Login";
+}
+
+@*centraliza o conteudo da tela*@
+<div>
+	@*Define a largura maxima do container*@
+	<div>
+		@*Estrutura que vai receber o form*@
+		<div>
+			@*Estrutura do cabeçalho*@
+			<div>
+				<h3>Login</h3>
+			</div>
+			<section>
+				<form asp-action="Login" method="post">
+					@Html.AntiForgeryToken()
+					<div asp-validation-summary="ModelOnly" class="text-danger small mb-3"></div>
+					<div>
+						<label asp-for="Email"></label>
+						<input asp-for="Email" placeholder="email@email.com" />
+						<span asp-validation-for="Email"></span>
+					</div>
+					<div>
+						<label asp-for="Senha"></label>
+						<input asp-for="Senha" placeholder="Digite sua Senha" type="password" />
+						<span asp-validation-for="Senha"></span>
+					</div>
+					<div>
+						<button>Entrar</button>
+					</div>
+					<div>
+						<p>Ainda não possui conta ?</p>
+						<a asp-action="CriarConta" asp-controller="Usuario">
+							Criar Nova Conta
+						</a>
+					</div>
+				</form>
+
+
+			</section>
+		</div>
+	</div>
+</div>
