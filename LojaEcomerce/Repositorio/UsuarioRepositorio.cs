@@ -1,9 +1,6 @@
 ﻿using LojaEcomerce.Interfaces;
 using LojaEcomerce.Models;
 using MySql.Data.MySqlClient;
-using Org.BouncyCastle.Crypto.Generators;
-using System.Security.Cryptography;
-using BCrypt.Net;
 
 namespace LojaEcomerce.Repositorio
 {
@@ -49,7 +46,6 @@ namespace LojaEcomerce.Repositorio
             return null;
 
         }
-
         public void CriarConta(LoginViewModel usuario)
         {
             using (var conn = new MySqlConnection(_connectionString))
@@ -70,7 +66,6 @@ namespace LojaEcomerce.Repositorio
             }
 
         }
-
 
 
     }
